@@ -4,15 +4,20 @@ export default function SideBar(){
     nome:"Catana"
   }
   const sugestedUsers = [
-    {conta:"bad.vibes.memes"},
-    {conta:"chibirdart"},
-    {conta:"razoesparaacreditar"},
-    {conta:"adorable_animals"},
-    {conta:"smallcutecats"}
+    {conta:"bad.vibes.memes",
+    follow:"Segue você"},
+    {conta:"chibirdart",
+    follow:"Segue você"},
+    {conta:"razoesparaacreditar",
+    follow:"Novo no Instagram"},
+    {conta:"adorable_animals",
+    follow:"Segue você"},
+    {conta:"smallcutecats",
+    follow:"Segue você"}
   ]
   const SugestoesDeUsuario = sugestedUsers.map(Sugestao => 
     <div class="sugestao">
-      <Sugestoes conta={Sugestao.conta}/>
+      <Sugestoes conta={Sugestao.conta} follow={Sugestao.follow}/>
     </div>
     )
     return (
@@ -54,7 +59,7 @@ function Sugestoes(props){
       <img src={`assets/img/${props.conta}.svg`} />
       <div class="texto">
         <div class="nome">{props.conta}</div>
-        <div class="razao">Segue você</div>
+        <div class="razao">{props.follow}</div>
       </div>
     </div>
   )
